@@ -45,7 +45,13 @@ def bin(name):
             host=request.host)
     else:
         app.config['service'].create_request(bin, request)
-        return "ok\n"
+        
+        hub_challange = request.form.get('hub.challenge')
+        
+        if hub_challenge:
+            return hub_challenge
+        else:
+          return "ok\n"
 
 @app.endpoint('views.docs')
 def docs(name):
