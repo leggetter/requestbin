@@ -13,9 +13,9 @@ X-Forwarded-Proto
 X-Via
 X-Forwarded-Port
 """.split("\n")[1:-1]
-storage_backend = 'requestbin.storage.redis.RedisStorage'
-redis_init = {
-    'host': '50.19.218.147', 'port': 10043, 'db': 0,
-    'password': os.environ.get("REDIS_PASSWORD")}
+storage_backend = 'requestbin.storage.memory.MemoryStorage'
+#redis_init = {
+#    'host': '50.19.218.147', 'port': 10043, 'db': 0,
+#    'password': os.environ.get("REDIS_PASSWORD")}
 
 service = "requestbin.service.RequestBin"
